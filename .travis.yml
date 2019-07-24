@@ -1,0 +1,14 @@
+language: generic
+
+services:
+  - docker
+
+env:
+  global:
+    - IMAGE_NAME=redpanda/web
+
+script:
+  - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" .
+
+after_script:
+  - docker images
