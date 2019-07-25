@@ -20,8 +20,3 @@ deploy:
   script: bash docker_push
   on:
     branch: master
-
-language: generic
-
-services:
-  - docker
